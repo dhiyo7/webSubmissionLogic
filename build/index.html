@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Pengumpulan Tugas</title>
+  </head>
+  <body>
+    <section class="text-gray-500 bg-gray-900 body-font relative">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-12">
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white"
+          >
+            Silahkan di isi gaes
+          </h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+            Ini web untuk pengumpulan tugas logic, isi aja sesuai jumlah soalnya
+            ya.. !
+          </p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 1"
+                type="tugas1"
+                name="tugas1"
+              />
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 2"
+                type="tugas2"
+              />
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 3"
+                type="tugas3"
+              />
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 4"
+                type="tugas4"
+              />
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 5"
+                type="tugas5"
+              />
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 6"
+                type="tugas6"
+              />
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 7"
+                type="tugas7"
+              />
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 8"
+                type="tugas8"
+              />
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 9"
+                type="tugas9"
+              />
+            </div>
+            <div class="p-2 w-1/2">
+              <input
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-red-500 text-base px-4 py-2"
+                placeholder="Tugas 10"
+                type="tugas10"
+              />
+            </div>
+            <div class="p-2 w-full">
+              <textarea
+                class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-red-500 text-base px-4 py-2 resize-none block"
+                placeholder="Ngomong aja kalo masih ada yang bingung di sini"
+              ></textarea>
+            </div>
+            <div class="p-2 w-full">
+              <button
+                class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg"
+              >
+                Kirim
+              </button>
+            </div>
+            <div
+              class="p-2 w-full pt-8 mt-8 border-t border-gray-800 text-center"
+            >
+              <a class="text-red-500">plugintegal@gmail.com</a>
+              <p class="leading-normal my-5">
+                Semangat gaes!! <br />Terus Berusaha
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Script JS -->
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyf7CpNu1CtIsKiB6Algzw42nJkaOdpVUdyTYvia_n0aaCW9acp/exec";
+      const form = document.forms["submit-to-google-sheet"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, {
+          method: "POST",
+          mode: "no-cors",
+          body: new FormData(form),
+        })
+          .then((response) => console.log("Success!", response))
+          .then(clear())
+          .catch((error) => console.error("Error!", error.message));
+      });
+      // End Scritpt Form Spreadsheets
+
+      // function reload(){
+      //   window.location.reload(7000);
+      // }
+
+      function clear() {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("wishes").value = "";
+      }
+    </script>
+  </body>
+</html>
